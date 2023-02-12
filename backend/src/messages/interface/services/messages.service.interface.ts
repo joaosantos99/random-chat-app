@@ -3,4 +3,5 @@ import Message from '../../schemas/message.schema';
 
 export interface MessagesServiceInterface {
   sendMessage(obj: MessageDto): Promise<Message>;
+  getAllMessages(): Promise<Message[]>;
 }

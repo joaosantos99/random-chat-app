@@ -20,4 +20,8 @@ export default class MessagesService implements MessagesServiceInterface {
 
     return this.messageRepository.create(message);
   }
+
+  getAllMessages() {
+    return this.messageRepository.findAll();
+  }
 }

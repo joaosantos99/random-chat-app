@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Inject } from '@nestjs/common';
+import { Controller, Post, Body, Inject, Get } from '@nestjs/common';
 
 import MessageDto from '../dto/message.dto';
 import { MessagesServiceInterface } from '../interface/services/messages.service.interface';
@@ -14,5 +14,10 @@ export class MessagesController {
   @Post(':roomId')
   async sendMessage(@Body() requestObj: MessageDto) {
     return this.messagesService.sendMessage(requestObj);
+  }
+
+  @Get()
+  async getAllMessages() {
+    return this.messagesService.getAllMessages();
   }
 }
